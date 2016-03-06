@@ -16,17 +16,26 @@ Project{
             "src/appController.h",
             "src/audioController.cpp",
             "src/audioController.h",
+            "src/constants.h",
             "src/eventX.cpp",
             "src/eventX.h",
             "src/main.cpp",
             "src/ofApp.cpp",
             "src/ofApp.h",
+            "src/parameterTransformer.cpp",
+            "src/parameterTransformer.h",
             "src/socketController.cpp",
             "src/socketController.h",
             "src/uiConnector.cpp",
             "src/uiConnector.h",
             "src/utils.h",
             "src/utils.mm",
+            "src/video/videoController.cpp",
+            "src/video/videoController.h",
+            "src/viz/fxController.cpp",
+            "src/viz/fxController.h",
+            "src/viz/fxFactory.cpp",
+            "src/viz/fxFactory.h",
         ]
 
         of.addons: [
@@ -34,6 +43,7 @@ Project{
             'ofxMacSystemProfiler',
             'ofxLibWebSockets',
             'ofxFft',
+            'ofxExprtk',
         ]
 
         // additional flags for the project. the of module sets some

@@ -14,12 +14,8 @@ void ofApp::setup(){
 
     uiController.setup();
     socket.setup();
-    //connector.setup(); //Was used to connect with OSC. not in use now
-    //osc.setup();
+     audio.setup();
 /*
-
-
-    audio.setup();
     video.setup();
 
     parameters.setup();
@@ -41,8 +37,9 @@ void ofApp::setup(){
 
 void ofApp::update()
 {
-    /*analytics.update();
+    //analytics.update();
     audio.update();//needed so it doesn't crash
+    /*
     parameters.update();
     video.update();
     */
@@ -62,7 +59,7 @@ void ofApp::draw()
 
 }
 
-/*void ofApp::audioIn(float * input, int bufferSize, int nChannels)
+void ofApp::audioIn(float * input, int bufferSize, int nChannels)
 {
     vector<float> audioBins;
     audioBins.resize(bufferSize);
@@ -74,7 +71,7 @@ void ofApp::draw()
     }
 
     audio.analize(audioBins);
-}*/
+}
 
 /*void ofApp::keyPressed(int key)
 {

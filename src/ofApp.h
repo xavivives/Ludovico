@@ -11,8 +11,9 @@
 #include "uiConnector.h"
 #include "socketController.h"
 #include "audioController.h"
-/*
+#include "video/videoController.h"
 
+/*
 #include "oscController.h"
 #include "connectorController.h"
 #include "settingsController.h"
@@ -22,7 +23,7 @@
 #include "purchaseController.h"
 #include "ofxMacWebView.h"
 #include "ofxMacWindowStyles.h"
-#include "videoController.h"
+
 */
 
 class ofApp : public ofBaseApp {
@@ -36,6 +37,7 @@ public:
 
     void onLoaded();
     void mouseMoved(int x, int y );
+    void audioIn(float * input, int bufferSize, int nChannels);
 
     /*void keyPressed(int key);
     void keyReleased(int key);
@@ -48,7 +50,7 @@ public:
     void gotMessage(ofMessage msg);
 
     void updateGlobal();
-    void audioIn(float * input, int bufferSize, int nChannels);
+
     void exit();
     void urlResponse(ofHttpResponse & response);
     */
@@ -57,15 +59,11 @@ public:
      utils utilsController;
      uiConnector uiController;
      socketController socket;
+     //analyticsController analytics;
      audioController audio;
+     videoController video;
+    /*parameterTransformer parameters;
 
-    /*analyticsController analytics;
-    //connectorController connector;
-    audioController audio;
-    //oscController osc;
-    parameterTransformer parameters;
-    ofSoundStream soundStream;
-    videoController video;
     settingsController settings;
 
     ofxMacWebView webUi;
