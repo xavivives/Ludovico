@@ -7,16 +7,15 @@
 #include "appController.h"
 #include "utils.h"
 #include "ofxMacSystemProfiler.h"
+//#include "analyticsController.h"
+#include "uiConnector.h"
+#include "socketController.h"
 
 /*
 #include "audioController.h"
 #include "oscController.h"
 #include "connectorController.h"
 #include "settingsController.h"
-#include "socketController.h"
-
-#include "analyticsController.h"
-
 #include "parameterTransformer.h"
 #include "uiConnector.h"
 #include "ofAppWebUi.h"
@@ -56,6 +55,9 @@ public:
 
      appController appController;
      utils utilsController;
+     uiConnector uiController;
+     socketController socket;
+
 
     /*analyticsController analytics;
     //connectorController connector;
@@ -65,9 +67,7 @@ public:
     ofSoundStream soundStream;
     videoController video;
     settingsController settings;
-    socketController socket;
 
-    uiConnector uiController;
     ofxMacWebView webUi;
     ofxMacWindowStyles window;
     purchaseController purchases;

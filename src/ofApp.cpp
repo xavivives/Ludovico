@@ -9,13 +9,14 @@ void ofApp::setup(){
     appController.setup();
     utilsController.setup();
     ofxMacSystemProfiler::init();
-    /*
 
-    analytics.setup();
+    //analytics.setup();
+
     uiController.setup();
     socket.setup();
 
 
+/*
     //connector.setup();
     //osc.setup();
     audio.setup();
@@ -46,9 +47,7 @@ void ofApp::update()
     video.update();
     */
     appController.update();
-    /*
     socket.update();
-    */
 }
 
 void ofApp::draw()

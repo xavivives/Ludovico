@@ -19,12 +19,16 @@ Project{
             "src/main.cpp",
             "src/ofApp.cpp",
             "src/ofApp.h",
+            "src/socketController.cpp",
+            "src/socketController.h",
+            "src/uiConnector.cpp",
+            "src/uiConnector.h",
             "src/utils.h",
             "src/utils.mm",
         ]
 
         of.addons: [
-            'ofxJSON', 'ofxMacSystemProfiler'
+            'ofxJSON', 'ofxMacSystemProfiler', 'ofxLibWebSockets'
         ]
 
         // additional flags for the project. the of module sets some
