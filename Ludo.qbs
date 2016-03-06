@@ -14,6 +14,8 @@ Project{
         files: [
             "src/appController.cpp",
             "src/appController.h",
+            "src/audioController.cpp",
+            "src/audioController.h",
             "src/eventX.cpp",
             "src/eventX.h",
             "src/main.cpp",
@@ -28,14 +30,23 @@ Project{
         ]
 
         of.addons: [
-            'ofxJSON', 'ofxMacSystemProfiler', 'ofxLibWebSockets'
+            'ofxJSON',
+            'ofxMacSystemProfiler',
+            'ofxLibWebSockets',
+            'ofxFft',
         ]
 
         // additional flags for the project. the of module sets some
         // flags by default to add the core libraries, search paths...
         // this flags can be augmented through the following properties:
         of.pkgConfigs: []       // list of additional system pkgs to include
-        of.includePaths: []     // include search paths
+
+        // include search paths
+        of.includePaths: [
+            'of/addons/ofxFft/src',
+            'of/addons/ofxFft/libs/kiss'
+        ]
+
         of.cFlags: []           // flags passed to the c compiler
         of.cxxFlags: []         // flags passed to the c++ compiler
         of.linkerFlags: []      // flags passed to the linker

@@ -14,11 +14,11 @@ void ofApp::setup(){
 
     uiController.setup();
     socket.setup();
-
-
-/*
-    //connector.setup();
+    //connector.setup(); //Was used to connect with OSC. not in use now
     //osc.setup();
+/*
+
+
     audio.setup();
     video.setup();
 

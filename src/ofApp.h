@@ -10,9 +10,9 @@
 //#include "analyticsController.h"
 #include "uiConnector.h"
 #include "socketController.h"
-
-/*
 #include "audioController.h"
+/*
+
 #include "oscController.h"
 #include "connectorController.h"
 #include "settingsController.h"
@@ -57,7 +57,7 @@ public:
      utils utilsController;
      uiConnector uiController;
      socketController socket;
-
+     audioController audio;
 
     /*analyticsController analytics;
     //connectorController connector;
