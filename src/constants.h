@@ -6,8 +6,6 @@ class constants: public ofBaseApp
 {
 
 public:
-    void setup();
-
     const static string SHADER_COMPOSER_FILE_NAME;
 
     const static string DEFAULT_JSON_STYLES_FILE_NAME;

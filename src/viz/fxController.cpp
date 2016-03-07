@@ -3,7 +3,7 @@
 
 void fxController::setup()
 {
-    /*ofAddListener(eventX::FX_CONTROLLER_UI_INPUT, this, &fxController::handleFxControllerUiInput);
+    ofAddListener(eventX::FX_CONTROLLER_UI_INPUT, this, &fxController::handleFxControllerUiInput);
 
     factory.setup();
     styler.setup();
@@ -22,12 +22,11 @@ void fxController::setup()
     pongFbo.allocate(fboSize,fboSize, GL_RGB);//it will have problemes rendering images bigger than 1024
 
     setStyle("0001");
-    */
 }
 
 void fxController::transform(ofImage *image)
 {
-    /*if(!image->isAllocated()) //image is not set
+    if(!image->isAllocated()) //image is not set
         return;
 
     currentViz.calculateVizVars();
@@ -43,9 +42,9 @@ void fxController::transform(ofImage *image)
 
     uiConnector::updateDataStream("currentFxs", "setCurrentFxs", currentViz.getCurrentFxs());
     uiConnector::updateDataStream("currentVizVars", "setCurrentVizVars", currentViz.getCurrentVizVars());
-    */
+
 }
-/*
+
 void fxController::pingPong(int index,  ofFbo &fboTo, ofFbo &fboFrom)
 {
     if(currentViz.shaderObjs.size() == 0) //if its the last shader we just draw it on the canvas
@@ -258,4 +257,3 @@ void fxController::broadcastStyles()
 {
     uiConnector::performAction("availableStyles", "setAvailableStyles", styler.generateJsonStyles());
 }
-*/

@@ -16,6 +16,7 @@ Project{
             "src/appController.h",
             "src/audioController.cpp",
             "src/audioController.h",
+            "src/constants.cpp",
             "src/constants.h",
             "src/eventX.cpp",
             "src/eventX.h",
@@ -26,6 +27,8 @@ Project{
             "src/parameterTransformer.h",
             "src/socketController.cpp",
             "src/socketController.h",
+            "src/styler.cpp",
+            "src/styler.h",
             "src/uiConnector.cpp",
             "src/uiConnector.h",
             "src/utils.h",
@@ -36,6 +39,7 @@ Project{
             "src/viz/fxController.h",
             "src/viz/fxFactory.cpp",
             "src/viz/fxFactory.h",
+            "src/vizTypes.h",
         ]
 
         of.addons: [

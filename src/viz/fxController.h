@@ -3,12 +3,11 @@
 #include "ofMain.h"
 #include "eventX.h"
 #include "fxFactory.h"
+#include "parameterTransformer.h"
 
-//#include "parameterTransformer.h"
-//
-//#include "styler.h"
-//#include "vizTypes.h"
-//#include "uiConnector.h"
+#include "styler.h"
+#include "vizTypes.h"
+#include "uiConnector.h"
 
 class fxController: public ofBaseApp
 {
@@ -18,7 +17,6 @@ public:
     void transform(ofImage *image);
 
 private:
-    /*
     VizObj currentViz;
     styler styler;
     int fboSize;
@@ -56,5 +54,4 @@ private:
 
     Json::Value getExprInfo(expressionKit *expKit, bool includeExpression);
     Json::Value getAllExprInfo();
-    */
 };

@@ -300,7 +300,7 @@ private:
     static float currentMidFrequency;
     static float currentHighFrequency;
 
-    //static void setExpressions(Json::Value jsonStyle);
+    static void setExpressions(Json::Value jsonStyle);
     static bool expressionIdExists(string expressionId);
 
 

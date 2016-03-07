@@ -4,25 +4,25 @@
 #include "eventX.h"
 #include "constants.h"
 #include "ofxJson.h"
-/*#include "parameterTransformer.h"
+#include "parameterTransformer.h"
 #include "vizTypes.h"
-*/
+
 class fxFactory: public ofBaseApp
 {
 
 public:
     void setup();
 
-    /*Json::Value getFxsForUi();
+    Json::Value getFxsForUi();
     ShaderObj getNewShaderObjByFxId(string fxId);
     ShaderObj getNewShaderObjByJson(Json::Value fx);
     VizObj getNewViz(Json::Value style);
     VizVarObj getNewVizVarObj(string varUId, string expr);
     bool isVizVarNameValid (string varName);
     bool fxExists(string fxId);
-    */
+
 private:
-    /*
+
     expressionKit* getNewExpressionKit(string uId, string exprId, string name, string defaultExpr, string groupUid);
     int idCount;
     string composeShader(string shaderUId, vector<string>sFxs, vector<string>uniformUIds, string shaderType);
@@ -44,5 +44,5 @@ private:
     string getCodeForFx(string shaderUId, string fxId, int index);
     void createExpressions(string fxId, int index);
     bool shaderObjExist(string shaderUId);
-    */
+
 };

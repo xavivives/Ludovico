@@ -3,7 +3,7 @@
 
 void fxFactory::setup()
 {
-    /*idCount = 0;
+    idCount = 0;
     if(!ofFile(constants::SHADER_COMPOSER_FILE_NAME).exists())
     {
         ofLogError("fxFactory::setup() - Couldn't find "+ constants::SHADER_COMPOSER_FILE_NAME);
@@ -31,9 +31,9 @@ void fxFactory::setup()
     vertexHeader = jsonFile["vertex"]["header"].asString();
     vertexMain = jsonFile["vertex"]["main"].asString();
     vertexFooter = jsonFile["vertex"]["footer"].asString();
-    */
+
 }
-/*
+
 string fxFactory::composeShader(string shaderUId, vector<string>sFxs, vector<string>uniformUIds,string  shaderType )
 {
     string s = "";
@@ -297,4 +297,3 @@ bool fxFactory::isVizVarNameValid (string varName) //php valid var. only letters
 
     return true;
 }
-*/
