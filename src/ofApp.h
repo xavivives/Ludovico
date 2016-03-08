@@ -13,18 +13,18 @@
 #include "audioController.h"
 #include "video/videoController.h"
 
-/*
-#include "oscController.h"
-#include "connectorController.h"
-#include "settingsController.h"
+
+//#include "oscController.h"
+//#include "connectorController.h"
+//#include "settingsController.h"
 #include "parameterTransformer.h"
 #include "uiConnector.h"
-#include "ofAppWebUi.h"
-#include "purchaseController.h"
-#include "ofxMacWebView.h"
-#include "ofxMacWindowStyles.h"
+//#include "ofAppWebUi.h"
+//#include "purchaseController.h"
+//#include "ofxMacWebView.h"
+//#include "ofxMacWindowStyles.h"
 
-*/
+
 
 class ofApp : public ofBaseApp {
 
@@ -39,7 +39,8 @@ public:
     void mouseMoved(int x, int y );
     void audioIn(float * input, int bufferSize, int nChannels);
 
-    /*void keyPressed(int key);
+
+    void keyPressed(int key);
     void keyReleased(int key);
 
     void mouseDragged(int x, int y, int button);
@@ -53,35 +54,37 @@ public:
 
     void exit();
     void urlResponse(ofHttpResponse & response);
-    */
 
-     appController appController;
-     utils utilsController;
-     uiConnector uiController;
-     socketController socket;
-     //analyticsController analytics;
-     audioController audio;
-     videoController video;
-    /*parameterTransformer parameters;
+    ofxMacSystemProfiler profiler;
+    //analyticsController analytics;
+    //connectorController connector;
+    parameterTransformer parameters;
+    ofSoundStream soundStream;
+    appController appController;
+    utils utilsController;
+    uiConnector uiController;
+    socketController socket;
+    //analyticsController analytics;
+    audioController audio;
+    videoController video;
 
-    settingsController settings;
+    //settingsController settings;
 
-    ofxMacWebView webUi;
-    ofxMacWindowStyles window;
-    purchaseController purchases;
+    //ofxMacWebView webUi;
+    //ofxMacWindowStyles window;
 
     int elapsedTime;
-*/
+
 private:
-     /*
+
     void checkResize();
     bool isKeyPressed(int key);
-    void createUiWindow();
+    //void createUiWindow();
     void setupUi();
-    void createBlankUi();
+    //void createBlankUi();
     int prevWidth;
     int prevHeight;
     vector<int> pressedKeys;
     ofImage logoImage;
-    */
+
 };

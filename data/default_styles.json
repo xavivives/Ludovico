@@ -1,0 +1,188 @@
+{
+   "styles" : [
+      {
+         "fxs" : null,
+         "name" : "Reset",
+         "styleUId" : "0000",
+         "timestamp" : 1427402116
+      },
+      {
+         "fxs" : [
+            {
+               "expressions" : [
+                  {
+                     "expr" : "avg(volume[0], volume[0], volume[0], volume[0],volume[0],volume[1], volume[1], volume[1], volume[3], volume[4], volume[5], volume[6], volume[7])^3",
+                     "exprId" : "brightness"
+                  }
+               ],
+               "fxId" : "brightness",
+               "fxName" : "Brightness",
+               "fxUId" : "47",
+               "position" : 0
+            },
+            {
+               "expressions" : [
+                  {
+                     "expr" : "volume^10",
+                     "exprId" : "stereoFx"
+                  }
+               ],
+               "fxId" : "rgbOffset",
+               "fxName" : "RGB Offset",
+               "fxUId" : "48",
+               "position" : 1
+            },
+            {
+               "expressions" : [
+                  {
+                     "expr" : "avg(midFrequency[0], midFrequency[0], midFrequency[0], midFrequency[1], midFrequency[1], midFrequency[3], midFrequency[4], midFrequency[5], midFrequency[6], midFrequency[7])*0.6",
+                     "exprId" : "blue"
+                  },
+                  {
+                     "expr" : "avg(highFrequency[0], highFrequency[0], highFrequency[0], highFrequency[1], highFrequency[1], highFrequency[3], highFrequency[4], highFrequency[5], highFrequency[6], highFrequency[7])*2",
+                     "exprId" : "green"
+                  },
+                  {
+                     "expr" : "avg(lowFrequency[0], lowFrequency[0], lowFrequency[0], lowFrequency[1], lowFrequency[1], lowFrequency[3], lowFrequency[4], lowFrequency[5], lowFrequency[6], lowFrequency[7])",
+                     "exprId" : "red"
+                  }
+               ],
+               "fxId" : "rgb",
+               "fxName" : "RGB",
+               "fxUId" : "49",
+               "position" : 2
+            },
+            {
+               "expressions" : [
+                  {
+                     "expr" : "(cos(elapsedtime/10000)+1)*0.5+0.5",
+                     "exprId" : "saturation"
+                  }
+               ],
+               "fxId" : "saturation",
+               "fxName" : "Saturation",
+               "fxUId" : "51",
+               "position" : 3
+            },
+            {
+               "expressions" : [
+                  {
+                     "expr" : "1.5",
+                     "exprId" : "contrast"
+                  }
+               ],
+               "fxId" : "contrast",
+               "fxName" : "Contrast",
+               "fxUId" : "52",
+               "position" : 4
+            },
+            {
+               "expressions" : [
+                  {
+                     "expr" : "if(volume[0]>1.2,1,0)",
+                     "exprId" : "invert"
+                  }
+               ],
+               "fxId" : "invert",
+               "fxName" : "Invert",
+               "fxUId" : "53",
+               "position" : 5
+            }
+         ],
+         "name" : "Default",
+         "styleUId" : "0001",
+         "timestamp" : 0,
+         "vizVars" : [
+            {
+               "expr" : "1",
+               "vizVarUId" : "var62"
+            },
+            {
+               "expr" : "volume",
+               "vizVarUId" : "voolume"
+            },
+            {
+               "expr" : "1",
+               "vizVarUId" : "speed"
+            }
+         ]
+      },
+      {
+         "fxs" : [
+            {
+               "expressions" : [
+                  {
+                     "expr" : "Saturation",
+                     "exprId" : "saturation"
+                  }
+               ],
+               "fxId" : "saturation",
+               "fxName" : "Saturation",
+               "fxUId" : "13",
+               "position" : 0
+            },
+            {
+               "expressions" : [
+                  {
+                     "expr" : "Brightness",
+                     "exprId" : "brightness"
+                  }
+               ],
+               "fxId" : "brightness",
+               "fxName" : "Brightness",
+               "fxUId" : "14",
+               "position" : 1
+            },
+            {
+               "expressions" : [
+                  {
+                     "expr" : "Contrast",
+                     "exprId" : "contrast"
+                  }
+               ],
+               "fxId" : "contrast",
+               "fxName" : "Contrast",
+               "fxUId" : "15",
+               "position" : 2
+            },
+            {
+               "expressions" : [
+                  {
+                     "expr" : "Lightness",
+                     "exprId" : "lightness"
+                  }
+               ],
+               "fxId" : "lightness",
+               "fxName" : "Lightness",
+               "fxUId" : "16",
+               "position" : 3
+            }
+         ],
+         "name" : "Basic Controls",
+         "styleUId" : "2788899",
+         "timestamp" : 1445532547,
+         "vizVars" : [
+            {
+               "expr" : "slider*2",
+               "vizVarUId" : "Saturation"
+            },
+            {
+               "expr" : "slider*2",
+               "vizVarUId" : "Brightness"
+            },
+            {
+               "expr" : "slider*2",
+               "vizVarUId" : "Contrast"
+            },
+            {
+               "expr" : "slider*2",
+               "vizVarUId" : "Lightness"
+            },
+            {
+               "expr" : "1",
+               "vizVarUId" : "RGB"
+            }
+         ]
+      }
+   ]
+}

@@ -1,0 +1,192 @@
+{
+    "fx": [
+        {
+            "fxName": "RGB Offset",
+            "fxId": "rgbOffset",
+            "isVisible":true,
+            "fxDescription": "Rhis is the FX description",
+            "code": "    color.r = texture2DRect(texture0, vec2(pos.x +stereoFx, pos.y)).r;\ncolor.g = texture2DRect(texture0, vec2(pos.x, pos.y)).g;\ncolor.b = texture2DRect(texture0, vec2(pos.x -stereoFx, pos.y)).b;",
+            "isStandalone": true,
+            "shaderType": "fragment",
+            "vars": [
+                {
+                    "exprName": "Offset",
+                    "exprId": "stereoFx",
+                    "defaultExpr": "10",
+                    "exprDescription": "This is a description"
+                }
+            ]
+        },
+        {
+            "fxName": "Brightness",
+            "fxId": "brightness",
+            "isVisible":true,
+            "fxDescription": "Rhis is the FX description",
+            "code": "    color.r = color.r * brightness;\ncolor.g = color.g * brightness;\ncolor.b = color.b * brightness;",
+            "isStandalone": false,
+            "shaderType": "fragment",
+            "vars": [
+                {
+                    "exprName": "Brightness amount",
+                    "exprId": "brightness",
+                    "defaultExpr": "1",
+                    "exprDescription": "This is a description"
+                }
+            ]
+        },
+        {
+            "fxName": "Contrast",
+            "fxId": "contrast",
+            "isVisible":true,
+            "fxDescription": "Rhis is the FX description",
+            "code": "    color.r = (color.r - 0.5) * contrast+ 0.5;\n    color.g = (color.g - 0.5) * contrast+ 0.5;\n    color.b = (color.b - 0.5) * contrast+ 0.5;",
+            "isStandalone": false,
+            "shaderType": "fragment",
+            "vars": [
+                {
+                    "exprName": "Contrast amount",
+                    "exprId": "contrast",
+                    "defaultExpr": "0.5",
+                    "exprDescription": "This is a description"
+                }
+            ]
+        },
+        {
+            "fxName": "Lightness",
+            "fxId": "lightness",
+            "isVisible":true,
+            "fxDescription": "Rhis is the FX description",
+            "code": "    color.r = color.r + lightness - 1;\n    color.g = color.g + lightness - 1;\n    color.b = color.b + lightness - 1;",
+            "isStandalone": false,
+            "shaderType": "fragment",
+            "vars": [
+                {
+                    "exprName": "Lightness amount",
+                    "exprId": "lightness",
+                    "defaultExpr": "1.5",
+                    "exprDescription": "This is a description"
+                }
+            ]
+        },
+        {
+            "fxName": "RGB",
+            "fxId": "rgb",
+            "isVisible":true,
+            "fxDescription": "Rhis is the FX description",
+            "code": "    color.r = color.r * red;\n    color.g = color.g * green;\n    color.b = color.b * blue;",
+            "isStandalone": false,
+            "shaderType": "fragment",
+            "vars": [
+                {
+                    "exprName": "Red amount",
+                    "exprId": "red",
+                    "defaultExpr": "1",
+                    "exprDescription": "This is a description"
+                },
+                {
+                    "exprName": "Green amount",
+                    "exprId": "green",
+                    "defaultExpr": "1",
+                    "exprDescription": "This is a description"
+                },
+                {
+                    "exprName": "Blue amount",
+                    "exprId": "blue",
+                    "defaultExpr": "1",
+                    "exprDescription": "This is a description"
+                }
+            ]
+        },
+        {
+            "fxName": "Saturation",
+            "fxId": "saturation",
+            "isVisible":true,
+            "fxDescription": "Rhis is the FX description",
+            "code": "    float P = sqrt((color.r)*(color.r) * 0.299 + (color.b)*(color.b) * 0.587 + (color.g)*(color.g) * 0.114 ) ;\n   color.r = P+(color.r-P)*saturation;\n    color.g = P+(color.g-P)*saturation;\n    color.b = P+(color.b-P)*saturation;",
+            "isStandalone": false,
+            "shaderType": "fragment",
+            "vars": [
+                {
+                    "exprName": "Saturation amount",
+                    "exprId": "saturation",
+                    "defaultExpr": "2",
+                    "exprDescription": "This is a description"
+                }
+            ]
+        },
+        {
+            "fxName": "Invert",
+            "fxId": "invert",
+            "isVisible":true,
+            "fxDescription": "Rhis is the FX description",
+            "code": "    if(invert !=0)\n    {\n        color.r = 1 - color.r;\n        color.g = 1 - color.g;\n        color.b = 1 - color.b;\n    }",
+            "isStandalone": false,
+            "shaderType": "fragment",
+            "vars": [
+                {
+                    "exprName": "Invert",
+                    "exprId": "invert",
+                    "defaultExpr": "1",
+                    "exprDescription": "This is a description"
+                }
+            ]
+        },
+        {
+            "fxName": "Zoom",
+            "fxId": "zoom",
+            "isVisible":false,
+            "fxDescription": "Center zoom",
+            "code": "   v.x = offsetX + v.x * scale;\n   v.y = offsetY + v.y * scale;\n   v.z = 1;\n",
+            "isStandalone": false,
+            "shaderType": "vertex",
+            "vars": [
+                {
+                    "exprName": "Offset X",
+                    "exprId": "offsetX",
+                    "defaultExpr": "0",
+                    "exprDescription": "This is a description"
+                },
+                {
+                    "exprName": "Offset Y",
+                    "exprId": "offsetY",
+                    "defaultExpr": "0",
+                    "exprDescription": "This is a description"
+                },
+                {
+                    "exprName": "Zoom",
+                    "exprId": "scale",
+                    "defaultExpr": "1.5",
+                    "exprDescription": "This is a description"
+                }
+            ]
+        },
+        {
+            "fxName": "Scale X",
+            "fxId": "scaleX",
+            "isVisible":false,
+            "fxDescription": "Strech the image on horitzontal axis",
+            "code": "v.x = (v.x - 0.5) * scale;",
+            "isStandalone": false,
+            "shaderType": "vertex",
+            "vars": [
+                {
+                    "exprName": "Scale X",
+                    "exprId": "scale",
+                    "defaultExpr": "1.5",
+                    "exprDescription": "This is a description"
+                }
+            ]
+        }
+    ],
+    "fragment": {
+        "header": "\n#version 120\n#extension GL_ARB_texture_rectangle : enable\n#extension GL_EXT_gpu_shader4 : enable\n\n",
+        "main": "\nvoid main(){\n\n//Getting coordinates of the current pixel in texture\nvec2 pos = gl_TexCoord[0].xy;\n//Getting the pixel color from the texture texture0 in pos\nvec4 color = texture2DRect(texture0, pos);\n\n",
+        "footer": "\n//Output the color of shader\ngl_FragColor = color;\n\n}"
+    },
+    "vertex": {
+        "header": "\n#version 120\n#extension GL_ARB_texture_rectangle : enable\n#extension GL_EXT_gpu_shader4 : enable\n\n",
+        "main": "void main() {\n   //Get original position of the vertex\n   vec3 v = gl_Vertex.xyz;\n\n",
+        "footer": "//Set output vertex position\n   vec4 posHomog = vec4( v, 1.0 );\n   gl_Position = gl_ModelViewProjectionMatrix * posHomog;\n   //Set output texture coordinate and color in a standard way\n   gl_TexCoord[0] = gl_MultiTexCoord0;\n   gl_FrontColor = gl_Color;\n}"
+    }
+}
+

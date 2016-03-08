@@ -3,35 +3,34 @@
 
 void videoController::setup()
 {
-
-   /* fx.setup();
+    fx.setup();
     fileHandler.setup();
     sourcesController.setup();
 
     ofAddListener(eventX::VIDEO_CONTROLLER_UI_INPUT, this, &videoController::handleVideoControllerUiInput);
-*/
+
     //setSource(-1, "/Gifs/creepy");
 }
 
 void videoController::update()
 {
-    //fileHandler.update();
-    //sourcesController.update();
+    fileHandler.update();
+    sourcesController.update();
 }
 
 void videoController::draw()
 {
-   // fx.transform(fileHandler.getImage());
+    fx.transform(fileHandler.getImage());
 }
 
 void videoController::setSource(int cell, string source)
 {
-    //fileHandler.setSource(cell, source);
+    fileHandler.setSource(cell, source);
 }
 
 void videoController::handleVideoControllerUiInput(eventX &e)
 {
-   /* string actionId = e.strings[0];
+    string actionId = e.strings[0];
     Json::Value data = e.json;
 
     if(actionId == "getLocalFolders")
@@ -45,5 +44,5 @@ void videoController::handleVideoControllerUiInput(eventX &e)
         ofNotifyEvent(eventX::SET_GIPHY_SUBJECT, event); //TODO. Call directly. delete event type
         fileHandler.setSource(-1, "temp");
     }
-*/
+
 }

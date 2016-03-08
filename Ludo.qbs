@@ -33,6 +33,18 @@ Project{
             "src/uiConnector.h",
             "src/utils.h",
             "src/utils.mm",
+            "src/video/gifBuffer.cpp",
+            "src/video/gifBuffer.h",
+            "src/video/gifFileHandler.cpp",
+            "src/video/gifFileHandler.h",
+            "src/video/gifPlayer.cpp",
+            "src/video/gifPlayer.h",
+            "src/video/gifSourceGiphy.cpp",
+            "src/video/gifSourceGiphy.h",
+            "src/video/gifSourceHardCoded.cpp",
+            "src/video/gifSourceHardCoded.h",
+            "src/video/gifSourcesController.cpp",
+            "src/video/gifSourcesController.h",
             "src/video/videoController.cpp",
             "src/video/videoController.h",
             "src/viz/fxController.cpp",
@@ -48,6 +60,10 @@ Project{
             'ofxLibWebSockets',
             'ofxFft',
             'ofxExprtk',
+            'ofxGifDecoder',
+            'ofxVideoToSequence',
+           // 'ofxMacWebView',,
+            //'ofxMacWindowStyles'
         ]
 
         // additional flags for the project. the of module sets some

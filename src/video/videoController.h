@@ -3,11 +3,10 @@
 #include "ofMain.h"
 #include "eventX.h"
 #include "viz/fxController.h"
-/*
-#include "gifFileHandler.h"
-#include "gifSourcesController.h"
+#include "video/gifFileHandler.h"
+#include "video/gifSourcesController.h"
 #include "uiConnector.h"
-*/
+
 class videoController: public ofBaseApp
 {
 
@@ -20,9 +19,9 @@ private:
     void setSource(int cell, string source);
     void handleVideoControllerUiInput(eventX &e);
 
-    //gifFileHandler fileHandler;
-    //gifSourcesController sourcesController;
-    //fxController fx;
+    gifFileHandler fileHandler;
+    gifSourcesController sourcesController;
+    fxController fx;
 
 };
 

@@ -14,23 +14,22 @@ void ofApp::setup(){
 
     uiController.setup();
     socket.setup();
-     audio.setup();
-/*
+    audio.setup();
+
     video.setup();
 
     parameters.setup();
 
-    soundStream.setup(this, 0, 2, 44100, 2048, 4);
-    purchases.setup();
+    //soundStream.setup(this, 0, 2, 44100, 2048, 4);
+    //purchases.setup();
 
     pressedKeys.clear();
-    window.disableFullScreen();
-    window.paintTitleBar();
+   // window.disableFullScreen();
+    //window.paintTitleBar();
 
     elapsedTime = ofGetElapsedTimeMillis();
     logoImage.load("ui/icon_128x128.png");
     setupUi();
-    */
 }
 
 
@@ -39,22 +38,23 @@ void ofApp::update()
 {
     //analytics.update();
     audio.update();//needed so it doesn't crash
-    /*
+
     parameters.update();
+
     video.update();
-    */
+
     appController.update();
     socket.update();
 }
 
 void ofApp::draw()
 {
-    /*
+
     ofBackground(255, 30, 100);
     logoImage.draw((ofGetWindowWidth() -logoImage.getWidth())*0.5,(ofGetWindowHeight() - logoImage.getHeight())*0.5);
 
     video.draw();
-    */
+
     appController.draw();
 
 }
@@ -73,7 +73,7 @@ void ofApp::audioIn(float * input, int bufferSize, int nChannels)
     audio.analize(audioBins);
 }
 
-/*void ofApp::keyPressed(int key)
+void ofApp::keyPressed(int key)
 {
     if(key==118)//v
     {
@@ -115,13 +115,13 @@ bool ofApp::isKeyPressed(int key)
     return false;
 }
 
-*/
+
 void ofApp::mouseMoved(int x, int y)
 {
     appController.mouseMoved(x, y);
 }
 
-/*
+
 void ofApp::mouseDragged(int x, int y, int button)
 {
 }
@@ -166,11 +166,11 @@ void ofApp::dragEvent(ofDragInfo info) {
 
 void ofApp::exit()
 {
-    //static eventX event;
-    //ofNotifyEvent(eventX::EXITING, event);
+    static eventX event;
+    ofNotifyEvent(eventX::EXITING, event);
 }
 
-void ofApp::createUiWindow()
+/*void ofApp::createUiWindow()
 {
     ofGLFWWindowSettings settings;
     settings.width = 300;
@@ -181,18 +181,19 @@ void ofApp::createUiWindow()
     ofRunApp(guiWindow, secondApp);
     ////secondApp->setPath(socket.getLocalhostUrl());
     secondApp->setPath(socket.getLocalhostUrl());
-}
+}*/
 
-void ofApp::createBlankUi()
+/*void ofApp::createBlankUi()
 {
     webUi.setup();
     webUi.load(socket.getLocalhostUrl());
     webUi.showBackground(true);
     webUi.show(true);
 }
+*/
 
 void ofApp::setupUi()
 {
     //createBlankUi();
-    //createUiWindow();
-}*/
+   // createUiWindow();
+}
