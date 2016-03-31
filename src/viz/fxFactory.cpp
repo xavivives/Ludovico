@@ -83,7 +83,11 @@ ShaderObj fxFactory::getNewShaderObjByFxId(string fxId)
     {
         string uniformUid = getUniformUId(fx["vars"][i]["exprId"].asString(), shaderObj.shaderUId);
         uniformsUIds.push_back(uniformUid);
-        shaderObj.expressions[uniformUid] = getNewExpressionKit(uniformUid, fx["vars"][i]["exprId"].asString(), fx["vars"][i]["exprName"].asString(), fx["vars"][i]["defaultExpr"].asString(), shaderObj.shaderUId);
+        shaderObj.expressions[uniformUid] = new expressionKit();
+        shaderObj.expressions[uniformUid] ->init(uniformUid, fx["vars"][i]["exprId"].asString(), fx["vars"][i]["exprName"].asString(), fx["vars"][i]["defaultExpr"].asString(), shaderObj.shaderUId);
+        parameterTransformer::addAllVariablesToExpKit( shaderObj.expressions[uniformUid] );
+
+        //setExpressionKit(shaderObj.expressions[uniformUid],uniformUid, fx["vars"][i]["exprId"].asString(), fx["vars"][i]["exprName"].asString(), fx["vars"][i]["defaultExpr"].asString(), shaderObj.shaderUId);
     }
 
     shaderObj.fxId = fx["fxId"].asString();
@@ -116,7 +120,15 @@ ShaderObj fxFactory::getNewShaderObjByJson(Json::Value fx)
         uniformsUIds.push_back(uniformUid);
         Json::Value exprModel = getExprModel(fxModel, exprId );
         string expressionName = exprModel["exprName"].asString();
-        shaderObj.expressions[uniformUid] = getNewExpressionKit(uniformUid,fx["expressions"][i]["exprId"].asString(), expressionName, fx["expressions"][i]["expr"].asString(), shaderObj.shaderUId);
+
+        shaderObj.expressions[uniformUid] = new expressionKit();
+        shaderObj.expressions[uniformUid] ->init(uniformUid, fx["expressions"][i]["exprId"].asString(), expressionName, fx["expressions"][i]["expr"].asString(), shaderObj.shaderUId);
+        parameterTransformer::addAllVariablesToExpKit( shaderObj.expressions[uniformUid] );
+
+
+
+
+        //shaderObj.expressions[uniformUid] = setExpressionKit(uniformUid,fx["expressions"][i]["exprId"].asString(), expressionName, fx["expressions"][i]["expr"].asString(), shaderObj.shaderUId);
     }
 
     shaderObj.fxId = fx["fxId"].asString();
@@ -133,13 +145,13 @@ ShaderObj fxFactory::getNewShaderObjByJson(Json::Value fx)
     return shaderObj;
 }
 
-expressionKit* fxFactory::getNewExpressionKit(string uId, string exprId, string name, string defaultExpr, string groupUid)
+expressionKit* fxFactory::setExpressionKit(expressionKit* expKit, string uId, string exprId, string name, string defaultExpr, string groupUid)
 {
-    expressionKit* expKit;
-    expKit = new expressionKit(); //It must be created on the heap so it keeps the references of parameterTransformer variables
+    //expressionKit* expKit;
+    //expKit = new expressionKit(); //It must be created on the heap so it keeps the references of parameterTransformer variables
     expKit->init(uId, exprId, name, defaultExpr, groupUid);
     parameterTransformer::addAllVariablesToExpKit(expKit);
-    return expKit;
+   // return expKit;
 }
 
 string fxFactory::getUniformUId(string varId, string shaderUId)
@@ -277,7 +289,12 @@ VizVarObj fxFactory::getNewVizVarObj(string varUId, string expr)
 {
     VizVarObj var;
     var.varUId = varUId;
-    var.expression =  getNewExpressionKit(varUId, "var", varUId, expr, "");
+    //var.expression =  setExpressionKit(varUId, "var", varUId, expr, "");
+
+    var.expression = new expressionKit();
+    var.expression ->init(varUId, "var", varUId, expr, "");
+    parameterTransformer::addAllVariablesToExpKit(var.expression);
+
     return var;
 }
 

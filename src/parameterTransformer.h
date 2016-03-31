@@ -30,9 +30,9 @@ struct expressionKit: public ofBaseApp
     float button;
     float toggle;
 
-    expressionKit()//constructor
+   /* expressionKit()//constructor
     {
-     /* uId = "";
+      uId = "";
         exprId = "";
         name = "";
         groupUId = "";
@@ -42,10 +42,10 @@ struct expressionKit: public ofBaseApp
         writtenExpr = "";
         isValid = true;
         value = 0.0;
-      */
+
     }
-
-
+ */
+/*
     expressionKit(const expressionKit &kit)//copy constructor
     {
         uId = kit.uId;
@@ -58,7 +58,7 @@ struct expressionKit: public ofBaseApp
         values = kit.values;
         isValid = kit.isValid;
         value = kit.value;
-    }
+    }*/
 
     expressionKit& operator=(const expressionKit kit)//assigment
     {

@@ -23,7 +23,7 @@ public:
 
 private:
 
-    expressionKit* getNewExpressionKit(string uId, string exprId, string name, string defaultExpr, string groupUid);
+    expressionKit* setExpressionKit(expressionKit* expKit, string uId, string exprId, string name, string defaultExpr, string groupUid);
     int idCount;
     string composeShader(string shaderUId, vector<string>sFxs, vector<string>uniformUIds, string shaderType);
     string getNewShaderUId();
