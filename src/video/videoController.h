@@ -2,9 +2,9 @@
 
 #include "ofMain.h"
 #include "eventX.h"
-#include "viz/fxController.h"
-#include "video/gifFileHandler.h"
-#include "video/gifSourcesController.h"
+#include "fxController.h"
+#include "gifFileHandler.h"
+#include "gifSourcesController.h"
 #include "uiConnector.h"
 
 class videoController: public ofBaseApp
